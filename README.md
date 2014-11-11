@@ -6,7 +6,8 @@ Prerequisite
 Must have these packages installed locally: 
 sudo apt-get install ansible
 sudo apt-get install git
-Must have cloned the git-commit-service and akka-cluster-example projects into the home directory.
+
+Must have this project (deploy project) cloned and in CWD is that directory
 
 If master node has not been configured before
 ---------------------------

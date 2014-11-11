@@ -2,3 +2,10 @@
   action: apt pkg={{item}} state=installed
   with_items:
   - ansible
+
+- name: clone backend url
+  git: repo={{ GIT_SERVICE_URL }} dest=~/{{ BACKEND_NAME }}
+  sudo: true
+
+- name: clone master url
+  git: repo={{ CLUSTER_URL }} dest=~/{{ MASTER_APP_NAME }}

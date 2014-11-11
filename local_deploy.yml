@@ -1,6 +1,6 @@
 ---
 
-- hosts: 127.0.0.1
+- hosts: local
   connection: local
   sudo: true
   user: manager

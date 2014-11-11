@@ -1,0 +1,4 @@
+---
+DEPLOY_URL: "git@github.com/mdotson/metrics-dashboard-deploy.git"
+GIT_SERVICE_URL: "git@github.com/mdotson/{{ BACKEND_APP_NAME }}"
+CLUSTER_URL: "git@github.com/mdotson/{{ MASTER_APP_NAME }}"
