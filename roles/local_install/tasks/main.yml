@@ -19,5 +19,5 @@
   ignore_errors: yes
 
 - name: rename private key to pem
-  command: mv ~/cluster ~/cluster.pem
+  command: cp ~/cluster ~/cluster.pem
 
