@@ -4,7 +4,7 @@
   - ansible
 
 - name: clone backend url
-  git: repo={{ GIT_SERVICE_URL }} dest=~/{{ BACKEND_NAME }}
+  git: repo={{ GIT_SERVICE_URL }} dest=~/{{ BACKEND_APP_NAME }}
   sudo: true
 
 - name: clone master url
