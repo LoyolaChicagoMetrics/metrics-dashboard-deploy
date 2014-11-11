@@ -2,6 +2,7 @@
   action: apt pkg={{item}} state=installed
   with_items:
   - ansible
+  - sshpass
 
 - name: clone backend url
   git: repo={{ GIT_SERVICE_URL }} dest=~/{{ BACKEND_APP_NAME }}
@@ -10,5 +11,13 @@
 - name: clone master url
   git: repo={{ CLUSTER_URL }} dest=~/{{ MASTER_APP_NAME }}
 
+- name: create ssh password file
+  template: src=ssh_pass.j2 dest=~/ssh_pass
+
 - name: generate ssh key
   shell: ssh-keygen -q -t rsa -b 2048 -f ~/cluster -N ""
+  ignore_errors: yes
+
+- name: copy ssh key
+  shell: sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@10.36.12.74
+

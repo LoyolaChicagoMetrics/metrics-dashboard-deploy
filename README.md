@@ -19,7 +19,7 @@ mv cluster cluster.pem
 
 TEMPORARY: pushing locally
 --------------------------
-ansible-playbook -i hosts local_deploy.yml --connection=local
+ansible-playbook -i hosts local_deploy.yml --connection=local --extra-vars "SSH_PASS=<password here>"
 
 Pushing to Cluster
 --------------
