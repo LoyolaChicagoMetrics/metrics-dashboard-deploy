@@ -9,3 +9,6 @@
 
 - name: clone master url
   git: repo={{ CLUSTER_URL }} dest=~/{{ MASTER_APP_NAME }}
+
+- name: generate ssh key
+  shell: ssh-keygen -q -t rsa -b 2048 -f ~/cluster -N ""

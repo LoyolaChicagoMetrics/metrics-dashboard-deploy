@@ -2,7 +2,7 @@
 127.0.0.1
 
 [backend_nodes]
-10.36.12.71
+10.36.12.71 ansible_ssh_private_key_file=./cluster.pem
 
 [master_node]
-10.36.12.74
+10.36.12.74 ansible_ssh_private_key_file=./cluster.pem

@@ -11,11 +11,15 @@ Must have this project (deploy project) cloned and in CWD is that directory
 
 If master node has not been configured before
 ---------------------------
-ssh-keygen -q -t rsa -b 2048 -f ~/cluster.pub -N ""
+ssh-keygen -q -t rsa -b 2048 -f ~/cluster -N ""
 ssh-copy-id -i ~/cluster.pub manager@10.36.12.74
 <input password>
 rm cluster.pub
 mv cluster cluster.pem
+
+TEMPORARY: pushing locally
+--------------------------
+ansible-playbook -i hosts local_deploy.yml --connection=local
 
 Pushing to Cluster
 --------------
