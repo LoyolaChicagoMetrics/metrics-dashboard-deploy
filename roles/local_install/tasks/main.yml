@@ -21,6 +21,3 @@
 - name: rename private key to pem
   command: mv ~/cluster ~/cluster.pem
 
-- name: copy ssh key
-  shell: sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@{{ ansible_all_ipv4_addresses[0] }}
-
