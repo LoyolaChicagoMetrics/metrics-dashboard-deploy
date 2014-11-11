@@ -1,0 +1,7 @@
+---
+
+- hosts: master_node
+  sudo: true
+  user: manager
+  roles:
+    - common_install

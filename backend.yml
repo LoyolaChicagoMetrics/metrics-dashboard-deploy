@@ -1,0 +1,11 @@
+---
+
+- hosts: backend_nodes
+  sudo: true
+  user: manager
+  roles:
+    - copy_project
+    - libgit_install
+    - common_install
+    - backend_install
+    - uwsgi

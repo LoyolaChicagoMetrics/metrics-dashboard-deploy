@@ -1,0 +1,4 @@
+---
+BACKEND_APP_NAME: git_commit_service
+MASTER_APP_NAME: akka-cluster-example
+LOCAL_HOME: "{{ lookup('env','HOME') }}"
