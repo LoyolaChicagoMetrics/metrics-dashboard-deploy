@@ -12,6 +12,9 @@
 #- name: install nginx
 #  apt: name=nginx update_cache=yes
 
+- name: copy ssh key to remote
+  local_action: shell sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@10.36.12.74
+
 - name: add apt-key for mongodb
   apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10
 
