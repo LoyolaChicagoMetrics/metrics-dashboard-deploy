@@ -4,8 +4,8 @@
   sudo: true
   user: manager
   roles:
+    - backend_install
     - copy_project
     - libgit_install
     - common_install
-    - backend_install
     - uwsgi

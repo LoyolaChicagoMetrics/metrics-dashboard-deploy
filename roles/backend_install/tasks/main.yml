@@ -13,7 +13,7 @@
 #  apt: name=nginx update_cache=yes
 
 - name: copy ssh key to remote
-  local_action: shell sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@{{ ansible_all_ipv4_addresses[0] }}
+  local_action: command sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@{{ inventory_hostname }}
 
 - name: add apt-key for mongodb
   apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10
