@@ -2,4 +2,4 @@
 # file: site.yml
 - include: local_deploy.yml
 #- include: master.yml
-#- include: backend.yml
+- include: backend.yml
