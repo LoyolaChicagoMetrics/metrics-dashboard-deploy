@@ -18,6 +18,9 @@
   shell: ssh-keygen -q -t rsa -b 2048 -f ~/cluster -N ""
   ignore_errors: yes
 
+- name: create ssh copy script
+  template: src=ssh_copy_id.sh.j2 dest=~/ssh_copy_id.sh
+
 - name: rename private key to pem
   command: cp ~/cluster ~/cluster.pem
 
