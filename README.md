@@ -4,8 +4,14 @@ Deploy
 Prerequisite
 ------------
 Must have these packages installed locally: 
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
 sudo apt-get install ansible
 sudo apt-get install git
+
+git clone https://github.com/mdotson/metrics-dashboard-deploy.git
 
 Must have this project (deploy project) cloned and in CWD is that directory
 
@@ -19,7 +25,7 @@ mv cluster cluster.pem
 
 TEMPORARY: pushing locally
 --------------------------
-ansible-playbook -i hosts local_deploy.yml --connection=local --extra-vars "SSH_PASS=<password here>"
+ansible-playbook -i hosts site.yml --extra-vars "SSH_PASS=<password here>"
 
 Pushing to Cluster
 --------------
