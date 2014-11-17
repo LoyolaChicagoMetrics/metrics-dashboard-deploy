@@ -1,20 +1,3 @@
-# Not needed yet, maybe in the future
-#
-#- name: get nginx signing key
-#  shell: wget http://nginx.org/keys/nginx_signing.key
-#
-#- name: add nginx signing key
-#  shell: apt-key add nginx_signing.key
-#
-#- name: remove key
-#  command: rm nginx_signing.key
-#
-#- name: install nginx
-#  apt: name=nginx update_cache=yes
-
-- name: copy ssh key to remote
-  local_action: command sshpass -f ~/ssh_pass ssh-copy-id -i ~/cluster.pub manager@{{ inventory_hostname }}
-
 - name: add apt-key for mongodb
   apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10
 
@@ -27,13 +10,13 @@
 - name: install packages
   action: apt pkg={{item}} state=installed
   with_items:
-  - cmake
   - python-pip
   - python-dev
   - build-essential
   - libffi-dev
   - libssl-dev
   - pkg-config
+  - openjdk-7-jdk
 
 - name: install virtualenv
   pip: name=virtualenv
@@ -42,4 +25,4 @@
   pip: name=uwsgi
 
 - name: install python packages from requirements.txt
-  pip: requirements={{ REMOTE_APP_HOME }}/requirements.txt virtualenv={{ REMOTE_APP_HOME }}/env
+  pip: requirements=~/{{ BACKEND_APP_NAME }}/requirements.txt virtualenv=~/{{ BACKEND_APP_NAME }}/env

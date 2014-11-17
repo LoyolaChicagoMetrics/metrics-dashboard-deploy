@@ -1,9 +1,6 @@
 ---
 REMOTE_HOME: "{{ ansible_env.HOME }}"
 
-LOCAL_APP_HOME: "{{ LOCAL_HOME }}/{{ BACKEND_APP_NAME }}"
-REMOTE_APP_HOME: "{{ REMOTE_HOME }}/{{ BACKEND_APP_NAME }}"
-
 LOG_DIR: "/var/log/{{ BACKEND_APP_NAME }}"
 SOCKET_DIR: "/var/run/{{ BACKEND_APP_NAME }}"
 CONFIG_DIR: "/etc/{{ BACKEND_APP_NAME }}"

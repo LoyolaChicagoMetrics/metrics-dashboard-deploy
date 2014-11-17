@@ -1,5 +1,0 @@
-#!/bin/sh
-
-{% for host in groups['backend_nodes'] %}
-   echo {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
-{% endfor %}

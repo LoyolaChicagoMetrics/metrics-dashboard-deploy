@@ -1,8 +1,0 @@
----
-
-- hosts: local
-  connection: local
-  sudo: true
-  user: manager
-  roles:
-    - local_install

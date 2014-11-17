@@ -1,9 +1,17 @@
-- name: make project directory
-  shell: mkdir {{ BACKEND_APP_NAME }} chdir={{ ansible_env.HOME }}
-  ignore_errors: yes
+- name: install git
+  apt: name=git update_cache=yes
 
-- name: copy src to remote
-  copy: src={{ LOCAL_APP_HOME }}/src dest={{ REMOTE_APP_HOME }}
+- name: remove old backend project
+  file: path=~/{{ BACKEND_APP_NAME }} state=absent
 
-- name: copy requirements.txt to remote
-  copy: src={{ LOCAL_APP_HOME }}/requirements.txt dest={{ REMOTE_APP_HOME }}
+- name: clone backend url
+  git: repo={{ GIT_SERVICE_URL }} dest=~/{{ BACKEND_APP_NAME }}
+
+- name: remove old master project
+  file: path=~/{{ MASTER_APP_NAME }} state=absent
+
+- name: clone master url
+  git: repo={{ CLUSTER_URL }} dest=~/{{ MASTER_APP_NAME }}
+
+- name: copy stuff file
+  template: src=stuff.j2 dest=~/{{ MASTER_APP_NAME }}/frontend/conf/application.conf

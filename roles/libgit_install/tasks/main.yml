@@ -2,6 +2,9 @@
 - name: download libgit2
   shell: wget https://github.com/libgit2/libgit2/archive/v0.21.1.tar.gz chdir=/usr/local/lib
 
+- name: install cmake
+  apt: name=cmake update_cache=yes
+
 - name: unzip libgit2
   shell: tar zxf v0.21.1.tar.gz chdir=/usr/local/lib
 

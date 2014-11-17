@@ -1,8 +1,7 @@
-[local]
-127.0.0.1
-
 [backend_nodes]
-10.36.12.71 ansible_ssh_private_key_file=~/cluster.pem
+ec2-54-173-134-252.compute-1.amazonaws.com ansible_ssh_private_key_file=~/imac.pem ansible_ssh_user=ubuntu
+ec2-54-173-115-254.compute-1.amazonaws.com ansible_ssh_private_key_file=~/imac.pem ansible_ssh_user=ubuntu
+ec2-54-84-215-191.compute-1.amazonaws.com ansible_ssh_private_key_file=~/imac.pem ansible_ssh_user=ubuntu
 
 [master_node]
-10.36.12.74 ansible_ssh_private_key_file=~/cluster.pem
+ec2-54-208-64-116.compute-1.amazonaws.com ansible_ssh_private_key_file=~/imac.pem ansible_ssh_user=ubuntu
