@@ -1,0 +1,17 @@
+- name: copy application.conf for backend
+  template: src=backend_cluster.conf.j2 dest=~/{{ CLUSTER_APP_NAME }}/backend/src/main/resources/application.conf
+
+- name: copy application.conf for frontend
+  template: src=backend_cluster.conf.j2 dest=~/{{ CLUSTER_APP_NAME }}/frontend/conf/application.conf
+
+# do this here or there won't be enough memory to build AND have a running service
+- name: stop backend_cluster
+  shell: service backend_cluster stop
+  ignore_errors: yes
+
+- name: stop frontend_cluster
+  shell: service frontend_cluster stop
+  ignore_errors: yes
+
+- name: build script
+  shell: sbt stage chdir=~/{{ CLUSTER_APP_NAME }}

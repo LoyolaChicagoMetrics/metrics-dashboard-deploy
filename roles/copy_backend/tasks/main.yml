@@ -1,0 +1,8 @@
+- name: install git
+  apt: name=git update_cache=yes
+
+- name: remove old backend project
+  file: path=~/{{ GIT_APP_NAME }} state=absent
+
+- name: clone backend url
+  git: repo={{ GIT_SERVICE_URL }} dest=~/{{ GIT_APP_NAME }}

@@ -29,8 +29,8 @@
   template: src=git_commit_service.ini.j2 dest={{ CONFIG_DIR }}/git_commit_service.ini
 
 - name: stop uwsgi
-  shell: service {{ BACKEND_APP_NAME }} stop
+  shell: service {{ GIT_APP_NAME }} stop
   ignore_errors: yes
 
 - name: start uwsgi
-  shell: service {{ BACKEND_APP_NAME }} start
+  shell: service {{ GIT_APP_NAME }} start

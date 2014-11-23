@@ -1,9 +1,11 @@
 ---
-BACKEND_APP_NAME: git_commit_service
-MASTER_APP_NAME: akka-cluster-example
+GIT_APP_NAME: git_commit_service
+CLUSTER_APP_NAME: akka-cluster-example
 
-GIT_SERVICE_URL: "https://github.com/mdotson/{{ BACKEND_APP_NAME }}"
-CLUSTER_URL: "https://github.com/mdotson/{{ MASTER_APP_NAME }}"
+GIT_SERVICE_URL: "https://github.com/mdotson/{{ GIT_APP_NAME }}"
+CLUSTER_URL: "https://github.com/mdotson/{{ CLUSTER_APP_NAME }}"
 
 JDK_FILENAME: "jdk-7u71-linux-x64.tar.gz"
 JDK_URL: "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/{{ JDK_FILENAME }}"
+
+REMOTE_HOME: "{{ ansible_env.HOME }}"

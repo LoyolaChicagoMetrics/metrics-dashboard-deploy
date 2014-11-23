@@ -16,7 +16,6 @@
   - libffi-dev
   - libssl-dev
   - pkg-config
-  - openjdk-7-jdk
 
 - name: install virtualenv
   pip: name=virtualenv
@@ -25,4 +24,4 @@
   pip: name=uwsgi
 
 - name: install python packages from requirements.txt
-  pip: requirements=~/{{ BACKEND_APP_NAME }}/requirements.txt virtualenv=~/{{ BACKEND_APP_NAME }}/env
+  pip: requirements=~/{{ GIT_APP_NAME }}/requirements.txt virtualenv=~/{{ GIT_APP_NAME }}/env

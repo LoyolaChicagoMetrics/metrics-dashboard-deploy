@@ -4,4 +4,7 @@
   sudo: true
   user: manager
   roles:
-    - common_install
+    - copy_cluster
+    - cluster_install
+    - cluster_config
+    - frontend_upstart

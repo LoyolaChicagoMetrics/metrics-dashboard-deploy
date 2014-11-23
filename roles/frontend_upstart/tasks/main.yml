@@ -1,0 +1,8 @@
+- name: remove old conf file
+  file: path=/etc/init/frontend_cluster.conf state=absent
+
+- name: create conf file
+  template: src=frontend_cluster.conf.j2 dest=/etc/init/frontend_cluster.conf
+
+- name: start frontend_cluster
+  shell: service frontend_cluster start

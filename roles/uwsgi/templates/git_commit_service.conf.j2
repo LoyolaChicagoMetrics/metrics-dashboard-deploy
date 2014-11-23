@@ -5,6 +5,6 @@ env GITHUB_USERNAME={{ lookup('env', 'GITHUB_USERNAME') }}
 env GITHUB_PASSWORD={{ lookup('env', 'GITHUB_PASSWORD') }}
 
 script
-    cd {{ REMOTE_HOME }}/{{ BACKEND_APP_NAME }}
+    cd {{ REMOTE_HOME }}/{{ GIT_APP_NAME }}
     exec uwsgi --ini {{ CONFIG_DIR }}/git_commit_service.ini
 end script

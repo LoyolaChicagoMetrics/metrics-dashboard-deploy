@@ -15,6 +15,8 @@ git clone https://github.com/mdotson/metrics-dashboard-deploy.git
 
 Must have this project (deploy project) cloned and in CWD is that directory
 
+Must have the environment variables GITHUB_USERNAME and GITHUB_PASSWORD set locally (used for API calls)
+
 Pushing to Cluster
 --------------
 ansible-playbook -i hosts site.yml

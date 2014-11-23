@@ -1,7 +1,7 @@
 [uwsgi]
 http = 0.0.0.0:80
 home = env
-wsgi-file = {{ REMOTE_HOME }}/{{ BACKEND_APP_NAME }}/src/git_commit_service.py
+wsgi-file = {{ REMOTE_HOME }}/{{ GIT_APP_NAME }}/src/git_commit_service.py
 callable = app
 master = true
 enable-threads = true

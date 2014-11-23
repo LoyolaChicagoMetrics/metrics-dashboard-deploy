@@ -1,4 +1,4 @@
 ---
-# file: site.yml
-#- include: master.yml
+
 - include: backend.yml
+- include: master.yml

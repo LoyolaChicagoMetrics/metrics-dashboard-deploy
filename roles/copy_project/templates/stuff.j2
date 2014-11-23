@@ -1,5 +1,0 @@
-{% for host in groups['backend_nodes'] %}
-{{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
-{% endfor %}
-
-{{ hostvars[groups['backend_nodes'][0]]['ansible_eth0']['ipv4']['address'] }}

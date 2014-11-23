@@ -1,0 +1,8 @@
+- name: remove old conf file
+  file: path=/etc/init/backend_cluster.conf state=absent
+
+- name: create conf file
+  template: src=backend_cluster.conf.j2 dest=/etc/init/backend_cluster.conf
+
+- name: start backend_cluster
+  shell: service backend_cluster start
