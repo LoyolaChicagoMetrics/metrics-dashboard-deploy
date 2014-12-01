@@ -1,6 +1,6 @@
 ---
 GIT_APP_NAME: git_commit_service
-CLUSTER_APP_NAME: akka-cluster-example
+CLUSTER_APP_NAME: metrics-dashboard-cluster
 
 GIT_SERVICE_URL: "https://github.com/mdotson/{{ GIT_APP_NAME }}"
 CLUSTER_URL: "https://github.com/mdotson/{{ CLUSTER_APP_NAME }}"

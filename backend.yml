@@ -4,7 +4,7 @@
   sudo: true
   user: manager
   roles:
-    - copy_backend
+    - copy_git_service
     - libgit_install
     - backend_install
     - copy_cluster
